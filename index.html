@@ -338,9 +338,15 @@ document.addEventListener("DOMContentLoaded", () => {
 // Load Engine Types
 function loadEngines() {
   const engines = [
-    { type: "Diesel", description: "High torque output for heavy vehicles." },
-    { type: "Petrol", description: "Used in lightweight, high-speed vehicles." },
-  ];
+  { type: "Diesel", description: "High torque output for heavy vehicles." },
+  { type: "Petrol", description: "Used in lightweight, high-speed vehicles." },
+  { type: "Electric", description: "Preferred for high efficiency, low emissions, and quiet operation." },
+  { type: "Battery Electric", description: "Powered by rechargeable batteries, commonly used in fully electric vehicles." },
+  { type: "Hybrid Electric", description: "Combines an internal combustion engine with an electric motor for better fuel efficiency." },
+  { type: "Fuel Cell Electric", description: "Uses hydrogen to generate electricity, producing water as the only byproduct." },
+  { type: "Plug-In Hybrid Electric", description: "Similar to hybrid engines but with larger batteries and the ability to charge from an external power source." },
+  { type: "Solar Electric", description: "Powered by solar panels that convert sunlight into electricity to drive the motor." }
+];
 
   const engineList = document.querySelector(".engine-list");
   engines.forEach(engine => {
@@ -441,7 +447,62 @@ function loadDetailedEngineInfo() {
         "Check the timing and adjust when needed.",
         "Inspect air filters and clean or replace as required."
       ]
-    }
+    },
+  "Electric": {
+    title: "Electric Engine",
+    description: "Electric engines are used in electric vehicles (EVs) and are preferred for their high efficiency, low emissions, and quiet operation.",
+    maintenanceTips: [
+      "Regularly inspect and maintain the battery for optimal performance.",
+      "Check and service the cooling system to prevent overheating.",
+      "Ensure the charging equipment and cables are in good condition.",
+      "Keep the motor and associated components clean and free from debris."
+    ]
+  },
+  "BatteryElectric": {
+    title: "Battery Electric Motor",
+    description: "Powered by rechargeable batteries, commonly used in fully electric vehicles.",
+    maintenanceTips: [
+      "Monitor the battery health and recharge regularly.",
+      "Inspect for signs of corrosion or damage on terminals.",
+      "Use a certified charger for optimal charging."
+    ]
+  },
+  "HybridElectric": {
+    title: "Hybrid Electric Engine",
+    description: "Combines an internal combustion engine with an electric motor for better fuel efficiency.",
+    maintenanceTips: [
+      "Regularly check the battery and hybrid system.",
+      "Ensure proper cooling of both ICE and electric systems.",
+      "Use manufacturer-recommended oils and fluids."
+    ]
+  },
+  "FuelCellElectric": {
+    title: "Fuel Cell Engine",
+    description: "Uses hydrogen to generate electricity for the motor, producing water as the only byproduct.",
+    maintenanceTips: [
+      "Check hydrogen storage tanks for leaks or damage.",
+      "Ensure regular service of the fuel cell stack.",
+      "Inspect and maintain cooling and air filtration systems."
+    ]
+  },
+  "PlugInHybridElectric": {
+    title: "Plug-In Hybrid Electric Engine",
+    description: "Similar to hybrid engines but with larger batteries and the ability to charge from an external power source.",
+    maintenanceTips: [
+      "Charge the battery fully and frequently to maintain capacity.",
+      "Inspect both the electric motor and ICE systems for wear.",
+      "Keep software and firmware up to date for optimal performance."
+    ]
+  },
+  "SolarElectric": {
+    title: "Solar Electric Engine",
+    description: "Powered by solar panels that convert sunlight into electricity to drive the motor.",
+    maintenanceTips: [
+      "Clean solar panels regularly to maximize energy absorption.",
+      "Inspect wiring and connectors for damage.",
+      "Ensure battery storage is well-maintained for consistent operation."
+    ]
+  },
   };
 
   // Load data for the selected engine type (for simplicity, assume Diesel is selected)
