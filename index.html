@@ -590,6 +590,53 @@ function addHoverParticles() {
     }, 1000);
   });
 }
+  
+    // Select the form
+    const contactForm = document.getElementById('contact');
+
+    // Create a submit button element
+    const submitButton = document.createElement('button');
+
+    // Set button attributes
+    submitButton.type = 'submit';
+    submitButton.className = 'submit-btn';
+    submitButton.textContent = 'Submit';
+
+    // Append the button to the form
+    contactForm.appendChild(submitButton);
+
+    // Add form submission handling
+    contactForm.addEventListener('submit', function (event) {
+      // Prevent the default form submission behavior
+      event.preventDefault();
+
+      // Get form input values
+      const name = document.getElementById('name').value.trim();
+      const email = document.getElementById('email').value.trim();
+      const message = document.getElementById('message').value.trim();
+
+      // Basic validation
+      if (!name || !email || !message) {
+        alert('Please fill out all fields.');
+        return;
+      }
+
+      // Email validation regex
+      const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+      if (!emailRegex.test(email)) {
+        alert('Please enter a valid email address.');
+        return;
+      }
+
+      // Simulate form submission
+      console.log('Form submitted:', { name, email, message });
+
+      // Clear the form
+      contactForm.reset();
+
+      // Display success message
+      alert('Thank you for contacting us! We will get back to you soon.');
+    });
   </script>
 </body>
 </html>
